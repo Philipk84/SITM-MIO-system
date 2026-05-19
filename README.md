@@ -1,12 +1,4 @@
-# Proyecto MIO reformulado - R4 y R7
-
-Este proyecto implementa los requerimientos R4 y R7 del caso SITM-MIO usando:
-
-- Backend CCO en Java + Gradle + ZeroC ICE.
-- Simulador de bus en Java + ICE.
-- Plataforma web en NodeJS + JavaScript + Google Maps JavaScript API.
-- Comunicación distribuida por ICE entre la plataforma web y el backend CCO.
-- Despliegue lógico separado: Bus, Servidor CCO, Plataforma Web y Centro de Datos.
+# Proyecto MIO - R4 y R7
 
 ## Patrón de diseño usado
 
@@ -38,8 +30,8 @@ mio-reformulado-r4-r7/
 
 ## Requisitos
 
-- JDK 11 recomendado.
-- ZeroC Ice instalado y en el PATH.
+- Se usa JDK 11.
+- ZeroC Ice instalado.
 - `slice2java --version` debe funcionar.
 - `slice2js --version` debe funcionar.
 - NodeJS instalado.
@@ -52,11 +44,6 @@ Desde la raíz:
 ```powershell
 .\gradlew clean build
 ```
-
-No uses `gradle clean build` si tienes Gradle global 9. Usa el wrapper `gradlew`.
-
-## Generar cliente ICE para NodeJS
-
 Desde `web-node`:
 
 ```powershell
@@ -64,14 +51,6 @@ cd web-node
 npm install
 npm run slice
 ```
-
-El comando `npm run slice` crea automáticamente:
-
-```text
-web-node/src/ice/generated/Mio.js
-```
-
-El proyecto Node está en CommonJS a propósito para que el archivo generado por `slice2js` funcione sin errores de ES Modules.
 
 ## Ejecutar con java y node
 
@@ -89,7 +68,7 @@ En otra terminal:
 
 ```powershell
 cd web-node
-$env:GOOGLE_MAPS_API_KEY="TU_API_KEY_DE_GOOGLE_MAPS"
+$env:GOOGLE_MAPS_API_KEY="API_KEY_DE_GOOGLE_MAPS"
 $env:ICE_PROXY="MioService:tcp -h 127.0.0.1 -p 10000"
 $env:PORT="8080"
 npm start
