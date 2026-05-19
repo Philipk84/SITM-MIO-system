@@ -1,0 +1,14 @@
+{
+  "name": "mio-web-node-googlemaps-ice",
+  "version": "1.0.0",
+  "description": "Plataforma web NodeJS + Google Maps conectada por ICE al CCO del SITM-MIO",
+  "main": "src/server.js",
+  "scripts": {
+    "slice": "node scripts/generate-slice.js",
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "ice": "^3.7.10"
+  }
+}

@@ -1,0 +1,19 @@
+plugins { id 'java' }
+
+dependencies {
+    implementation project(':common')
+    implementation 'com.zeroc:ice:3.7.10'
+}
+
+task copyRuntimeLibs(type: Copy) {
+    from configurations.runtimeClasspath
+    into "$buildDir/libs/lib"
+}
+
+jar {
+    dependsOn copyRuntimeLibs
+    manifest { attributes 'Main-Class': 'co.icesi.mio.bus.BusSimulator' }
+    doFirst {
+        manifest { attributes 'Class-Path': configurations.runtimeClasspath.files.collect { 'lib/' + it.name }.join(' ') }
+    }
+}

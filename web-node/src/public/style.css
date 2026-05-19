@@ -1,0 +1,104 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f6f8;
+  color: #1f2937;
+}
+header {
+  background: #003b73;
+  color: white;
+  padding: 18px 24px;
+}
+header h1 { margin: 0 0 4px; }
+header p { margin: 0; }
+main { padding: 16px; }
+.panel {
+  background: white;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  margin-bottom: 16px;
+}
+.controls {
+  display: flex;
+  gap: 12px;
+  align-items: end;
+  flex-wrap: wrap;
+}
+label { display: grid; gap: 6px; font-weight: 700; }
+input, select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  min-width: 160px;
+  background: white;
+}
+button {
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 8px;
+  background: #0066cc;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+}
+button:hover { background: #004f9e; }
+#status { margin-top: 10px; color: #475569; }
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  background: #f8fafc;
+  font-size: 13px;
+  font-weight: 700;
+}
+.legend-color {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  display: inline-block;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+}
+#map {
+  width: 100%;
+  min-height: 620px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  background: #e2e8f0;
+}
+aside {
+  background: white;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  overflow-x: auto;
+}
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { padding: 8px; border-bottom: 1px solid #e5e7eb; text-align: left; }
+th { background: #f8fafc; }
+.route-pill {
+  display: inline-block;
+  padding: 3px 8px;
+  color: white;
+  border-radius: 999px;
+  font-weight: 700;
+}
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  #map { min-height: 460px; }
+}

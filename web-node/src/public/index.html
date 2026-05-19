@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plataforma MIO - R4 y R7</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Plataforma MIO</h1>
+      <p>Visualización diferenciada de rutas MIO, buses en tiempo real y velocidad promedio mensual.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <div class="controls">
+        <label>
+          Ruta
+          <select id="routeId"></select>
+        </label>
+        <button id="drawRouteBtn">Consultar ruta</button>
+        <button id="drawAllRoutesBtn">Mostrar todas las rutas</button>
+        <button id="loadMetricsBtn">Ver velocidades 2025</button>
+      </div>
+      <div id="status">Cargando aplicación...</div>
+      <div id="legend" class="legend"></div>
+    </section>
+
+    <section class="layout">
+      <div id="map"></div>
+      <aside>
+        <h2>Velocidad promedio mensual</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Ruta</th>
+              <th>Mes</th>
+              <th>Km/h</th>
+              <th>Muestras</th>
+            </tr>
+          </thead>
+          <tbody id="metricsBody"></tbody>
+        </table>
+      </aside>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

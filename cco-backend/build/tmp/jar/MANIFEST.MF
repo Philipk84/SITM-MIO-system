@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: co.icesi.mio.cco.app.CcoServer
+Class-Path: lib/common-1.0.0.jar lib/ice-3.7.10.jar
+

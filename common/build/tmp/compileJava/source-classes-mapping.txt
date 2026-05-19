@@ -1,0 +1,19 @@
+mio/PositionListHelper.java
+ mio.PositionListHelper
+mio/_MioServicePrxI.java
+ mio._MioServicePrxI
+mio/RouteMetricListHelper.java
+ mio.RouteMetricListHelper
+mio/MioService.java
+ mio.MioService
+ mio.MioService$1
+mio/PositionDTO.java
+ mio.PositionDTO
+mio/StopDTO.java
+ mio.StopDTO
+mio/RouteMetricDTO.java
+ mio.RouteMetricDTO
+mio/StopListHelper.java
+ mio.StopListHelper
+mio/MioServicePrx.java
+ mio.MioServicePrx

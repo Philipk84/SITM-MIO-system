@@ -1,0 +1,27 @@
+plugins { id 'java' }
+
+dependencies {
+    implementation 'com.zeroc:ice:3.7.10'
+}
+
+def generatedSliceDir = file("$buildDir/generated-src/slice/main/java")
+
+task compileSlice(type: Exec) {
+    description = 'Genera las clases Java desde Mio.ice usando slice2java'
+    group = 'build'
+
+    def sliceFile = file('src/main/slice/Mio.ice')
+    inputs.file sliceFile
+    outputs.dir generatedSliceDir
+
+    doFirst { generatedSliceDir.mkdirs() }
+
+    commandLine 'slice2java', '-I', file('src/main/slice').absolutePath,
+            sliceFile.absolutePath, '--output-dir', generatedSliceDir.absolutePath
+}
+
+sourceSets {
+    main { java { srcDir generatedSliceDir } }
+}
+
+compileJava.dependsOn compileSlice

@@ -1,0 +1,15 @@
+allprojects {
+    group = 'co.icesi.mio'
+    version = '1.0.0'
+    repositories { mavenCentral() }
+}
+
+subprojects {
+    apply plugin: 'java'
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+}
